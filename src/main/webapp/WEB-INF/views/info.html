@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table,td{
+        border: 1px solid;
+    }
+</style>
+<body>
+<table th:object="${productView}">
+    <tr>
+        <td>
+            <label>ID: </label>
+            <span th:text="${productView.id}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>NAME: </label>
+            <span th:text="${productView.name}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>PRICE: </label>
+            <span th:text="${productView.price}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>DATE: </label>
+            <span th:text="${productView.date}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>DETAIL: </label>
+            <span th:text="${productView.detail}"></span>
+        </td>
+    </tr>
+    <tr>
+        <a href="" th:href="@{/home}">back to list</a>
+    </tr>
+</table>
+</body>
+</html>

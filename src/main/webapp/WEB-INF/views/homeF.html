@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid;
+    }
+</style>
+<body>
+<div>
+    <h1><a href="" th:href="@{/home}" style="cursor: pointer;text-decoration: none">Home</a></h1>
+</div>
+<table>
+    <tr>
+        <td colspan="7">
+            <form action="" th:action="@{/search}" method="get">
+                <input type="search" name="keyword" placeholder="name...">
+                <input type="submit" value="search">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="7">
+            <a href="" th:href="@{/create}">add new product</a>
+        </td>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>DETAIL</th>
+        <th>PRICE</th>
+        <th>DATE</th>
+    </tr>
+    <tr th:each="row : ${productList}">
+        <td th:text="${row.id}"></td>
+        <td><a href="" th:text="${row.name}" th:href="@{/{id}/info(id=${row.getId()})}"></a></td>
+        <td th:text="${row.detail}"></td>
+        <td th:text="${row.price}"></td>
+        <td th:text="${row.date}"></td>
+        <td><a href="" th:href="@{/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a href="" th:href="@{/{id}/update(id=${row.getId()})}">update</a></td>
+    </tr>
+</table>
+</body>
+</html>
